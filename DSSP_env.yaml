@@ -4,7 +4,9 @@ channels:
   - bioconda
   - nodefaults
 dependencies:
-  - python 3.11
+  - python
+  - biopython
   - numpy
   - pandas
+  - matplotlib
   - pip
