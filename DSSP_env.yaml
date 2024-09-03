@@ -1,4 +1,4 @@
-name: DSSP
+name: DSSP_env
 channels:
   - conda-forge
   - bioconda
