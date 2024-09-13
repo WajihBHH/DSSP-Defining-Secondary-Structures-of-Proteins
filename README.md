@@ -1,6 +1,6 @@
-DDSP (Define Secondary Structure of Proteins) Recreation Project
+# DDSP (Define Secondary Structure of Proteins) Recreation Project
 
-# About the Project
+## About the Project
 
 DPPP aims to simulate a very basic reproduction of the original DSSP software.
 
