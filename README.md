@@ -54,11 +54,15 @@ Memory Usage: The script monitors memory usage and prints it upon completion.
 
 Python version 3.10.12
 Libraries 
-        -Native: Multiprocessing, Sys, Time, Tkinter
-        -Additional: Biopython, 
+        -Native: Multiprocessing, Sys, Tkinter
+        -Additional: Biopython, Memory_profiler, Time, TQDM
+        
 ### Contact Us
+
 Project lead: wajih.bhh@outlook.com
+
 Project link: https://github.com/WajihBHH/prog3
 
-###Acknowledgements
+### Acknowledgements
+
 https://pages.github.com/
