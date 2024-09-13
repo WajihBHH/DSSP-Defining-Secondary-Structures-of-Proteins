@@ -31,7 +31,18 @@ Execute the main script, and make sure you have your PDB file on hand:
 
 python script.py <PDB file path>
 
-Deactivate environment: conda deactivate
+View Results:
+
+    Custom Predictions: Results will be saved in custom_output.txt.
+    DSSP Predictions: Results will be saved in real_output.txt.
+    Memory Usage: Memory usage details will be printed in the console.
+    Graphical Interface: A GUI window will display the secondary structure predictions.
+
+You can reexecute this process with any PDB file. Once you're done, exit your environment with:
+
+conda deactivate
+
+Worry not, you can go back to it at any time!
 
 ### Built With
 
