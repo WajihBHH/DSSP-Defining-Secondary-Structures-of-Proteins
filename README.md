@@ -44,8 +44,18 @@ conda deactivate
 
 Worry not, you can go back to it at any time!
 
+### Performance Metrics
+
+Time Measurement: The script measures the time taken for both the custom predictions and DSSP predictions.
+
+Memory Usage: The script monitors memory usage and prints it upon completion.
+
 ### Built With
 
+Python version 3.10.12
+Libraries 
+        -Native: Multiprocessing, Sys, Time, Tkinter
+        -Additional: Biopython, 
 ### Contact Us
 Project lead: wajih.bhh@outlook.com
 Project link: https://github.com/WajihBHH/prog3
