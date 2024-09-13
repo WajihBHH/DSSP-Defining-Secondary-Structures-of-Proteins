@@ -10,6 +10,7 @@ This README provides an overview of the functionality and usage of the dppp Pyth
 
 Prerequisites:
 -The dppp_env.yaml file in the main repository.
+-Ready .pdb files to predict secondary structures.
         
 
 
@@ -17,9 +18,11 @@ Prerequisites:
 
 Use the following commands to setup your environment properly. Be sure to choose a suitable work directory first!
 
+```
 conda env create -f dppp_env.yaml
 
 conda activate DPPP
+```
 
 ### Usage
 
@@ -28,9 +31,9 @@ Activate environment: conda activate DPPP
 to activate your environment.
 
 Execute the main script, and make sure you have your PDB file on hand:
-
+```
 python script.py <PDB file path>
-
+```
 View Results:
 
     Custom Predictions: Results will be saved in custom_output.txt.
@@ -40,7 +43,7 @@ View Results:
 
 You can reexecute this process with any PDB file. Once you're done, exit your environment with:
 
-conda deactivate
+```conda deactivate```
 
 Worry not, you can go back to it at any time!
 
