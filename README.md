@@ -1,4 +1,4 @@
-# DDSP (Define Secondary Structure of Proteins) Recreation Project
+# DSSP (Define Secondary Structure of Proteins) Recreation Project
 
 ## Table of Contents
 1. About the project and Installation
