@@ -50,9 +50,7 @@ python dssp_assignment.py 1zaa.pdb
 
 --- Or in the code
 
-pdb_file = "your_protein.pdb"
-
-Change this line then run python dssp_assignment.py
+pdb_file = "your_protein.pdb" : Change this line then run python dssp_assignment.py
 
 ## Understanding the Output
 
@@ -71,9 +69,17 @@ E : Beta-sheet
 C : Coil/Random coil
 
 --- Metrics
+
+
 Precision : Of predicted helices, how many are actually helices?
+
+
 Recall : Of actual helices, how many did we predict correctly?
+
+
 F1-Score : Balanced measure of precision and recall
+
+
 
 --- Hydrogen Bond Information
 Shows donor → acceptor residue pairs
