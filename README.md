@@ -1,71 +1,105 @@
 # DDSP (Define Secondary Structure of Proteins) Recreation Project
 
-## About the Project
+## Table of Contents
+1. About the project and Installation
+2. Getting PDB files
+3. Running the code
+4. Understanding the output
+5. Analyzing multiple files
+6. Built With
+7. Contact us
+8. Acknowledgements
 
-DPPP aims to simulate a very basic reproduction of the original DSSP software.
+## About the Project and Installation
 
-This README provides an overview of the functionality and usage of the dppp Python script.
+This project aims to simulate a simpler reproduction of the original DSSP software.
+It's focused on assigning alpha helix and beta sheet only.
 
-### Getting Started
+### Install required packages
+pip install biopython numpy
 
-Prerequisites:
--The dppp_env.yaml file in the main repository.
--Ready .pdb files to predict secondary structures.
-        
+Optional: Install DSSP for reference comparison
+sudo apt-get install dssp # Ubuntu/Debian
+brew install dssp # macOS with Homebrew
 
+## Getting PDB Files
 
-### Installing
+### Direct download from RCSB PDB
+--- Download 1ZAA (example protein)
+wget https://files.rcsb.org/download/1ZAA.pdb
+--- Or download any other PDB file
+wget https://files.rcsb.org/download/[PDB_ID].pdb
 
-Use the following commands to setup your environment properly. Be sure to choose a suitable work directory first!
+### Manual download
+Go to https://www.rcsb.org/
+Search for your protein (e.g., "1ZAA")
+Click "Download Files" → "PDB Format"
 
-```
-conda env create -f dppp_env.yaml
+## Running the Code
+---  Through the command line
+python dssp_assignment.py 1zaa.pdb
 
-conda activate DPPP
-```
+--- Or in the code
+pdb_file = "your_protein.pdb"
 
-### Usage
+Change this line then run python dssp_assignment.py
 
-If not done in the previous step, use:
-Activate environment: conda activate DPPP
-to activate your environment.
+## Understanding the Output
 
-Execute the main script, and make sure you have your PDB file on hand:
-```
-python script.py <PDB file path>
-```
-View Results:
+--- Output Files
+[filename]_secondary_structure.txt : Tab-separated file with assignments
+Contains columns: Residue, Chain, Number, Predicted
 
-    Custom Predictions: Results will be saved in custom_output.txt.
-    DSSP Predictions: Results will be saved in real_output.txt.
-    Memory Usage: Memory usage details will be printed in the console.
-    Graphical Interface: A GUI window will display the secondary structure predictions.
+--- Structure Type Codes
+H : Alpha-helix
+E : Beta-sheet
+C : Coil/Random coil
 
-You can reexecute this process with any PDB file. Once you're done, exit your environment with:
+--- Metrics
+Precision : Of predicted helices, how many are actually helices?
+Recall : Of actual helices, how many did we predict correctly?
+F1-Score : Balanced measure of precision and recall
 
-```conda deactivate```
+--- Hydrogen Bond Information
+Shows donor → acceptor residue pairs
+Energy in kcal/mol (more negative = stronger bond)
+Distance in Angstroms
 
-Worry not, you can go back to it at any time!
+## Analyzing multiple files
 
-### Performance Metrics
+--- Run this code
 
-Time Measurement: The script measures the time taken for both the custom predictions and DSSP predictions.
+import glob 
+from dssp_assignment import SecondaryStructureAssigner
 
-Memory Usage: The script monitors memory usage and prints it upon completion.
+pdb_files = glob.glob("*.pdb")
+results = { }
 
-### Built With
+for pdb_file in pdb_files: 
+    print(f"Analyzing { pdb_file } ...") 
+    analyzer = SecondaryStructureAssigner(pdb_file) 
+    assignments, accuracy, metrics = analyzer.run_analysis() 
+    results[pdb_file] = accuracy 
+    print ( f"Accuracy: {accuracy: .3f}\n")
+
+## Built With
 
 Python version 3.10.12
-Libraries 
-        -Native: Multiprocessing, Sys, Tkinter
-        -Additional: Biopython, Memory_profiler, Time, TQDM
+Libraries :
+        math
+        sys
+        numpy
+        Bio.PDB
+        collections
+        warnings
+
         
-### Contact Us
+## Contact Us
 
 Project lead: wajih.bhh@outlook.com
 
 Project link: https://github.com/WajihBHH/prog3
 
-### Acknowledgements
+## Acknowledgements
 
-https://pages.github.com/
+Kabch W., Sander C., et al. (1983)
