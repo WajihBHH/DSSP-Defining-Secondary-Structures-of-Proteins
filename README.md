@@ -13,9 +13,13 @@
 ## About the Project and Installation
 
 This project aims to simulate a simpler reproduction of the original DSSP software.
+
+
 It's focused on assigning alpha helix and beta sheet only.
 
 ### Install required packages
+
+
 pip install biopython numpy
 
 Optional: Install DSSP for reference comparison
@@ -27,23 +31,33 @@ brew install dssp # macOS with Homebrew
 ## Getting PDB Files
 
 ### Direct download from RCSB PDB
+
+
 --- Download 1ZAA (example protein)
+
 
 wget https://files.rcsb.org/download/1ZAA.pdb
 
+
 --- Or download any other PDB file
+
 
 wget https://files.rcsb.org/download/[PDB_ID].pdb
 
 ### Manual download
 
+
 Go to https://www.rcsb.org/
+
 
 Search for your protein (e.g., "1ZAA")
 
+
 Click "Download Files" → "PDB Format"
 
+
 ## Running the Code
+
 ---  Through the command line
 
 python dssp_assignment.py 1zaa.pdb
@@ -54,19 +68,25 @@ pdb_file = "your_protein.pdb" : Change this line then run python dssp_assignment
 
 ## Understanding the Output
 
+
 --- Output Files
+
 
 [filename]_secondary_structure.txt : Tab-separated file with assignments
 
+
 Contains columns: Residue, Chain, Number, Predicted
 
+
 --- Structure Type Codes
+
 
 H : Alpha-helix
 
 E : Beta-sheet
 
 C : Coil/Random coil
+
 
 --- Metrics
 
@@ -80,10 +100,15 @@ Recall : Of actual helices, how many did we predict correctly?
 F1-Score : Balanced measure of precision and recall
 
 
-
 --- Hydrogen Bond Information
+
+
 Shows donor → acceptor residue pairs
+
+
 Energy in kcal/mol (more negative = stronger bond)
+
+
 Distance in Angstroms
 
 ## Analyzing multiple files
@@ -91,17 +116,24 @@ Distance in Angstroms
 --- Run this code
 
 import glob 
+
 from dssp_assignment import SecondaryStructureAssigner
 
 pdb_files = glob.glob("*.pdb")
 results = { }
 
 for pdb_file in pdb_files: 
+
     print(f"Analyzing { pdb_file } ...") 
+    
     analyzer = SecondaryStructureAssigner(pdb_file) 
+    
     assignments, accuracy, metrics = analyzer.run_analysis() 
+    
     results[pdb_file] = accuracy 
+    
     print ( f"Accuracy: {accuracy: .3f}\n")
+    
 
 ## Built With
 
