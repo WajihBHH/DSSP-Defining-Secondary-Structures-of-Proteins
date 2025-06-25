@@ -58,18 +58,18 @@ Click "Download Files" → "PDB Format"
 
 ## Running the Code
 
----  Through the command line
+### Through the command line
 
 python dssp_assignment.py 1zaa.pdb
 
---- Or in the code
+### Or in the code
 
 pdb_file = "your_protein.pdb" : Change this line then run python dssp_assignment.py
 
 ## Understanding the Output
 
 
---- Output Files
+### Output Files
 
 
 [filename]_secondary_structure.txt : Tab-separated file with assignments
@@ -78,7 +78,7 @@ pdb_file = "your_protein.pdb" : Change this line then run python dssp_assignment
 Contains columns: Residue, Chain, Number, Predicted
 
 
---- Structure Type Codes
+### Structure Type Codes
 
 
 H : Alpha-helix
@@ -88,7 +88,7 @@ E : Beta-sheet
 C : Coil/Random coil
 
 
---- Metrics
+### Metrics
 
 
 Precision : Of predicted helices, how many are actually helices?
@@ -100,7 +100,7 @@ Recall : Of actual helices, how many did we predict correctly?
 F1-Score : Balanced measure of precision and recall
 
 
---- Hydrogen Bond Information
+### Hydrogen Bond Information
 
 
 Shows donor → acceptor residue pairs
@@ -138,9 +138,9 @@ Distance in Angstroms
 
 ## Built With
 
-Python version 3.10.12
+### Python version 3.10.12
 
-Libraries :
+### Libraries :
         math
         sys
         numpy
