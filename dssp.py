@@ -446,7 +446,7 @@ def main():
 
 
 if __name__ == "__main__":
-    pdb_file = "1zaa.pdb"  # Make sure this file exists
+    pdb_file = "src/1zaa.pdb"  # Make sure this file exists
     
     print(f"Analyzing protein structure from: {pdb_file}")
     
