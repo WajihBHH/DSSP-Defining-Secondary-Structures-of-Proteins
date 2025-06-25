@@ -115,29 +115,31 @@ Distance in Angstroms
 
 --- Run this code
 
-import glob 
-
-from dssp_assignment import SecondaryStructureAssigner
-
-pdb_files = glob.glob("*.pdb")
-results = { }
-
-for pdb_file in pdb_files: 
-
-    print(f"Analyzing { pdb_file } ...") 
+    import glob 
     
-    analyzer = SecondaryStructureAssigner(pdb_file) 
+    from dssp_assignment import SecondaryStructureAssigner
     
-    assignments, accuracy, metrics = analyzer.run_analysis() 
+    pdb_files = glob.glob("*.pdb")
     
-    results[pdb_file] = accuracy 
+    results = { }
     
-    print ( f"Accuracy: {accuracy: .3f}\n")
+    for pdb_file in pdb_files: 
     
+        print(f"Analyzing { pdb_file } ...") 
+        
+        analyzer = SecondaryStructureAssigner(pdb_file) 
+        
+        assignments, accuracy, metrics = analyzer.run_analysis() 
+        
+        results[pdb_file] = accuracy 
+        
+        print ( f"Accuracy: {accuracy: .3f}\n")
+        
 
 ## Built With
 
 Python version 3.10.12
+
 Libraries :
         math
         sys
