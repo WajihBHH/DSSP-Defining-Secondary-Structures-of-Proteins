@@ -20,29 +20,31 @@ It's focused on assigning alpha helix and beta sheet only.
 ### Install required packages
 
 
-pip install biopython numpy
+    pip install biopython numpy
+    
 
-Optional: Install DSSP for reference comparison
+### Optional : Install DSSP for reference comparison
 
-sudo apt-get install dssp # Ubuntu/Debian
+    sudo apt-get install dssp # Ubuntu/Debian
 
-brew install dssp # macOS with Homebrew
+    brew install dssp # macOS with Homebrew
+    
 
 ## Getting PDB Files
 
 ### Direct download from RCSB PDB
 
 
---- Download 1ZAA (example protein)
+#### Download 1ZAA (example protein)
 
 
-wget https://files.rcsb.org/download/1ZAA.pdb
+    wget https://files.rcsb.org/download/1ZAA.pdb
 
 
---- Or download any other PDB file
+#### Or download any other PDB file
 
 
-wget https://files.rcsb.org/download/[PDB_ID].pdb
+    wget https://files.rcsb.org/download/[PDB_ID].pdb
 
 ### Manual download
 
@@ -60,11 +62,13 @@ Click "Download Files" → "PDB Format"
 
 ### Through the command line
 
-python dssp_assignment.py 1zaa.pdb
+    python dssp_assignment.py 1zaa.pdb
 
 ### Or in the code
 
-pdb_file = "your_protein.pdb" : Change this line then run python dssp_assignment.py
+    pdb_file = "your_protein.pdb"
+    
+    Change this line then run python dssp_assignment.py
 
 ## Understanding the Output
 
