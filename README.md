@@ -117,7 +117,7 @@ Distance in Angstroms
 
 ## Analyzing multiple files
 
---- Run this code
+#### Run this code
 
     import glob 
     
@@ -161,4 +161,4 @@ Project link: https://github.com/WajihBHH/prog3
 
 ## Acknowledgements
 
-Kabch W., Sander C., et al. (1983)
+Kabch W., Sander C. (1983)
