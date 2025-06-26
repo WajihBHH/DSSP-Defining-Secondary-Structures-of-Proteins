@@ -60,15 +60,15 @@ Click "Download Files" → "PDB Format"
 
 ## Running the Code
 
-### Through the command line
+### Through the command line (for 1zaa)
 
-    python dssp_assignment.py 1zaa.pdb
+    python dssp.py
 
 ### Or in the code
 
     pdb_file = "your_protein.pdb"
     
-    Change this line then run python dssp_assignment.py
+    Change this line then run python dssp.py
 
 ## Understanding the Output
 
@@ -121,7 +121,7 @@ Distance in Angstroms
 
     import glob 
     
-    from dssp_assignment import SecondaryStructureAssigner
+    from dssp import SecondaryStructureAssigner
     
     pdb_files = glob.glob("*.pdb")
     
