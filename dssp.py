@@ -446,7 +446,10 @@ def main():
 
 
 if __name__ == "__main__":
-    pdb_file = "src/1zaa.pdb"  # Make sure this file exists
+    pdb_file ="src/1zaa.pdb"  # Change this to your PDB file path
+
+    if len(sys.argv) > 1:
+        pdb_file = sys.argv[1]
     
     print(f"Analyzing protein structure from: {pdb_file}")
     
