@@ -60,9 +60,9 @@ Click "Download Files" → "PDB Format"
 
 ## Running the Code
 
-### Through the command line (for 1zaa)
+### Through the command line
 
-    python dssp.py
+    python dssp.py (add your pdb file name if not 1zaa)
 
 ### Or in the code
 
